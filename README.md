@@ -1,10 +1,10 @@
-# MathOCR
+# MathOCR (Reader of Math Images)
 
 Does OCR with math and does different functions after the math is recognized
 
 main.py -> main code for the OCR, calls the different libraries that are used to perform the Math OCR tasks.
 
-# Project Overview
+## Project Overview
 
 My project idea is a reader for written mathematical equations that can automatically do calculations
 for simple (and progressively more complex, depending on how much time I have) mathematical

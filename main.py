@@ -25,7 +25,16 @@ def preprocessimage(img):
 
 # function that exports the SymPy code stored into a string variable and creates a Python source code file
 # Saves file of SymPy code wherever the user desires
-def exportSymPyCode(codeString):
+def exportSymPyCode(SymPycode):
+    with open("Python_SymPy_Code_File.py", "w") as file1:
+        # writing SymPy code string to file
+        file1.write(str(SymPycode))
+
+# This function exports the LATEX code that is outputted from the Latex OCR to a LATEX file
+def exportLATEXCode(LATEXcode):
+    with open("LATEX_Code_File.tex", "w") as file2:
+        # Writing LATEX ode string to file
+        file2.write(str(LATEXcode))
 
 
 
@@ -52,6 +61,14 @@ if __name__ == '__main__':
     model = LatexOCR()
     print(app.predict(preprocessedImage))
 
+    prediction = app.predict(preprocessedImage)
+
+    exportLATEXCode(prediction)
+
+    prediction_sympy = latex2sympy(prediction)
+
+
+
 
     tex = r"\frac{d}{dx}(x^{2}+x)"
     # Or you can use '\mathrm{d}' to replace 'd'
@@ -62,6 +79,8 @@ if __name__ == '__main__':
 
     print(x)
     print(y)
+
+    exportSymPyCode(x)
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

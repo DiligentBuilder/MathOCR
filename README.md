@@ -18,7 +18,6 @@ outputted onto a screen.
 
 ## Function 1. Recognize the handwritten math and display it
 
-
 ## Function 2. Convert LATEX code into SymPy code
 
 

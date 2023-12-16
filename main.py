@@ -65,13 +65,13 @@ def menu():
 
     print("1. Perform OCR on the math image and display the predicted math and LATEX code")
 
-    print("2. Convert predicted LATEX code into SymPy code")
+    print("2. Convert LATEX code prediction into SymPy code")
 
     print("3. Do arithmetic using the math image and solve the arithmetic")
 
-    print("4. Convert predicted LATEX code to Symbolic Python code and export")
+    print("4. Convert LATEX code prediction to SymPy code and export")
 
-    print("5. Convert predicted LATEX code to MATLAB code and export")
+    print("5. Convert LATEX code prediction to MATLAB code and export")
 
     print("6. Export the direct LATEX code that is the output of the Math Image OCR")
 
@@ -87,7 +87,6 @@ def menu():
 
 # get the path to the input image of the math that the user would like to use
 def getmathinputimage():
-
     print("Please enter the file path for the input math image")
 
     print("This should be a clear image that has clear math on it")
@@ -104,7 +103,6 @@ def getmathinputimage():
 
 # Using the numerical evaluation in SymPy to calculate the arithmetic expression
 def calculateArithmetic(SymPyCode):
-
     answer = N(SymPyCode)
 
     print("The answer to the arithmetic (according to the LATEX prediction) is")
@@ -117,7 +115,6 @@ def calculateArithmetic(SymPyCode):
     # read in char from the user
 
     if response == "Y" or response == "y":
-
         # Write the answer to an output file
         with open("./Output/answer.txt", "w") as file3:
             # writing the answer string to a file
@@ -134,15 +131,13 @@ if __name__ == '__main__':
     prediction = ""
 
     if userOption == '1':
-
         # Get the file path of the math image that the user would like to use as the input image
         userFilePath = getmathinputimage()
 
         # Read in the image
         # JPEG format seems to work the best when inputting the images into the Math OCR
-        #image = iio.imread("MathImage.jpg")
+        # image = iio.imread("MathImage.jpg")
         # Downsample the image
-
 
         # Using the Latex OCR library
         img = Image.open(userFilePath)
@@ -153,7 +148,7 @@ if __name__ == '__main__':
         print(model(img))
 
         prediction = model(img)
-        #print(asyncio.run(app.predict(img1)))
+        # print(asyncio.run(app.predict(img1)))
 
         # Display the output image that is produced by the LATEX code when it is run
 
@@ -177,26 +172,33 @@ if __name__ == '__main__':
         else:
             exportLATEXCode(prediction)
 
-    # Convert LATEX code to Sympy prediction
+    # Convert LATEX code prediction to Sympy
     if userOption == '2':
         prediction_sympy = latex2sympy(str(prediction))
         print("The Prediction, converted to SymPy code, is:")
         print(prediction_sympy)
 
+    # Convert LATEX code prediction to Sympy AND export
+    if userOption == '4':
+        prediction_sympy = latex2sympy(str(prediction))
+        print("The Prediction, converted to SymPy code, is:")
+        print(prediction_sympy)
 
+        # Exporting
+        exportSymPyCode(prediction_sympy)
 
+    # Code for Testing purposes
 
-    tex = r"\frac{d}{dx}(x^{2}+x)"
-    # Or you can use '\mathrm{d}' to replace 'd'
-    x = latex2sympy(tex)
-    # => "Derivative(x**2 + x, x)"
-    y = latex2latex(tex)
-    # => "2 x + 1"
-
-    print(x)
-    print(y)
-
-    exportSymPyCode(x)
-
+    # tex = r"\frac{d}{dx}(x^{2}+x)"
+    # # Or you can use '\mathrm{d}' to replace 'd'
+    # x = latex2sympy(tex)
+    # # => "Derivative(x**2 + x, x)"
+    # y = latex2sympy(tex)
+    # # => "2 x + 1"
+    #
+    # print(x)
+    # print(y)
+    #
+    # exportSymPyCode(x)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -1,7 +1,6 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Aaron Wang
+# Math OCR
+# ECE Junior Design Project #3
 
 from PIL import Image
 from pix2tex.cli import LatexOCR
@@ -124,68 +123,74 @@ def calculateArithmetic(SymPyCode):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
-    # Ask the user what they would like to do
-    # Ask the user to select an option from the menu
-    userOption = menu()
+    # Keep running the loop as long as the user would like until they quit
 
-    prediction = ""
+    # Implemented with infinite loop and break when the user decides to quit
 
-    if userOption == '1':
-        # Get the file path of the math image that the user would like to use as the input image
-        userFilePath = getmathinputimage()
+    while True:
 
-        # Read in the image
-        # JPEG format seems to work the best when inputting the images into the Math OCR
-        # image = iio.imread("MathImage.jpg")
-        # Downsample the image
+        # Ask the user what they would like to do
+        # Ask the user to select an option from the menu
+        userOption = menu()
 
-        # Using the Latex OCR library
-        img = Image.open(userFilePath)
+        prediction = ""
+
+        if userOption == '1':
+            # Get the file path of the math image that the user would like to use as the input image
+            userFilePath = getmathinputimage()
+
+            # Read in the image
+            # JPEG format seems to work the best when inputting the images into the Math OCR
+            # image = iio.imread("MathImage.jpg")
+            # Downsample the image
+
+            # Using the Latex OCR library
+            img = Image.open(userFilePath)
+            model = LatexOCR()
+
+            # Display the LATEX code
+            print("Prediction is: ")
+            print(model(img))
+
+            prediction = model(img)
+            # print(asyncio.run(app.predict(img1)))
+
+            # Display the output image that is produced by the LATEX code when it is run
+
+        img2 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.png').convert('RGB')
+
+        preprocessedImage = preprocessimage(image.img_to_array(img2))
+
         model = LatexOCR()
+        # print(asyncio.run(app.predict(preprocessedImage)))
 
-        # Display the LATEX code
-        print("Prediction is: ")
-        print(model(img))
+        # prediction = app.predict(preprocessedImage)
 
-        prediction = model(img)
-        # print(asyncio.run(app.predict(img1)))
+        # print("Prediction is")
 
-        # Display the output image that is produced by the LATEX code when it is run
+        # print(asyncio.run(prediction))
 
-    img2 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.png').convert('RGB')
+        # Export the LATEX code option
+        if userOption == '6':
+            if 'prediction' == '':
+                print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first.")
+            else:
+                exportLATEXCode(prediction)
 
-    preprocessedImage = preprocessimage(image.img_to_array(img2))
+        # Convert LATEX code prediction to Sympy
+        if userOption == '2':
+            prediction_sympy = latex2sympy(str(prediction))
+            print("The Prediction, converted to SymPy code, is:")
+            print(prediction_sympy)
 
-    model = LatexOCR()
-    # print(asyncio.run(app.predict(preprocessedImage)))
+        # Convert LATEX code prediction to Sympy AND export
+        if userOption == '4':
+            prediction_sympy = latex2sympy(str(prediction))
+            print("The Prediction, converted to SymPy code, is:")
+            print(prediction_sympy)
 
-    # prediction = app.predict(preprocessedImage)
-
-    # print("Prediction is")
-
-    # print(asyncio.run(prediction))
-
-    # Export the LATEX code option
-    if userOption == '6':
-        if 'prediction' == '':
-            print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first.")
-        else:
-            exportLATEXCode(prediction)
-
-    # Convert LATEX code prediction to Sympy
-    if userOption == '2':
-        prediction_sympy = latex2sympy(str(prediction))
-        print("The Prediction, converted to SymPy code, is:")
-        print(prediction_sympy)
-
-    # Convert LATEX code prediction to Sympy AND export
-    if userOption == '4':
-        prediction_sympy = latex2sympy(str(prediction))
-        print("The Prediction, converted to SymPy code, is:")
-        print(prediction_sympy)
-
-        # Exporting
-        exportSymPyCode(prediction_sympy)
+            # Exporting
+            exportSymPyCode(prediction_sympy)
 
     # Code for Testing purposes
 
@@ -201,4 +206,12 @@ if __name__ == '__main__':
     #
     # exportSymPyCode(x)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        # Ask the user if they would like to quit
+        print("Would you like to quit")
+        quit = input("Y/N")
+
+        if quit:
+            break
+
+
+

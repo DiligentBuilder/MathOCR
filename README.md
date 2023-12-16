@@ -40,3 +40,9 @@ A menu is provided to the user. The user can select which feature of this projec
 
 
 ## Explanation of Organization of Project Files and Main Files of Interest
+
+
+## Acknowledgements
+Libraries that I used in this project
+https://github.com/lukas-blecher/LaTeX-OCR
+https://github.com/augustt198/latex2sympy

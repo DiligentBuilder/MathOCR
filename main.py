@@ -4,7 +4,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 from PIL import Image
-from pix2text.cli import LatexOCR
+from pix2tex.cli import LatexOCR
 
 from pix2tex.api import app
 
@@ -61,7 +61,9 @@ def menu():
 
     print("Menu")
 
-    print("1. Recognize and display the math image")
+    print("Here are the currently available menu options:")
+
+    print("1. Perform OCR on the math image and display the predicted math and LATEX code")
 
     print("2. Convert predicted LATEX code into SymPy code")
 
@@ -84,7 +86,7 @@ def menu():
 
 
 # get the path to the input image of the math that the user would like to use
-def getMathInputImage():
+def getmathinputimage():
 
     print("Please enter the file path for the input math image")
 
@@ -124,33 +126,62 @@ def calculateArithmetic(SymPyCode):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # Read in the image
-    # JPEG format seems to work the best when inputting the images into the Math OCR
-    #image = iio.imread("MathImage.jpg")
-    # Downsample the image
+
+    # Ask the user what they would like to do
+    # Ask the user to select an option from the menu
+    userOption = menu()
+
+    prediction = ""
+
+    if userOption == '1':
+
+        # Get the file path of the math image that the user would like to use as the input image
+        userFilePath = getmathinputimage()
+
+        # Read in the image
+        # JPEG format seems to work the best when inputting the images into the Math OCR
+        #image = iio.imread("MathImage.jpg")
+        # Downsample the image
 
 
-    # Using the Latex OCR library
-    img1 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.jpg')
-    img2 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.jpg').convert('RGB')
-    model = LatexOCR()
-    print(asyncio.run(app.predict(img1)))
+        # Using the Latex OCR library
+        img = Image.open(userFilePath)
+        model = LatexOCR()
+
+        # Display the LATEX code
+        print("Prediction is: ")
+        print(model(img))
+
+        prediction = model(img)
+        #print(asyncio.run(app.predict(img1)))
+
+        # Display the output image that is produced by the LATEX code when it is run
+
+    img2 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.png').convert('RGB')
 
     preprocessedImage = preprocessimage(image.img_to_array(img2))
 
     model = LatexOCR()
-    #print(asyncio.run(app.predict(preprocessedImage)))
+    # print(asyncio.run(app.predict(preprocessedImage)))
 
-    prediction = app.predict(preprocessedImage)
+    # prediction = app.predict(preprocessedImage)
 
+    # print("Prediction is")
 
-    print("Prediction is")
+    # print(asyncio.run(prediction))
 
-    print(asyncio.run(prediction))
+    # Export the LATEX code option
+    if userOption == '6':
+        if 'prediction' == '':
+            print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first.")
+        else:
+            exportLATEXCode(prediction)
 
-    exportLATEXCode(prediction)
-
-    prediction_sympy = latex2sympy(str(prediction))
+    # Convert LATEX code to Sympy prediction
+    if userOption == '2':
+        prediction_sympy = latex2sympy(str(prediction))
+        print("The Prediction, converted to SymPy code, is:")
+        print(prediction_sympy)
 
 
 

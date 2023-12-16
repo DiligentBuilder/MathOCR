@@ -15,6 +15,9 @@ from latex2sympy2 import latex2sympy, latex2latex
 from sympy import *
 
 import skimage as ski
+
+import asyncio
+
 print(ski.__version__)
 
 import imageio as iio
@@ -67,6 +70,8 @@ def menu():
     print("4. Convert predicted LATEX code to Symbolic Python code and export")
 
     print("5. Convert predicted LATEX code to MATLAB code and export")
+
+    print("6. Export the direct LATEX code that is the output of the Math Image OCR")
 
     print("Which menu option would you like to select?")
 
@@ -129,19 +134,19 @@ if __name__ == '__main__':
     img1 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.jpg')
     img2 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.jpg').convert('RGB')
     model = LatexOCR()
-    print(app.predict(img1))
+    print(asyncio.run(app.predict(img1)))
 
     preprocessedImage = preprocessimage(image.img_to_array(img2))
 
     model = LatexOCR()
-    print(app.predict(preprocessedImage))
+    #print(asyncio.run(app.predict(preprocessedImage)))
 
     prediction = app.predict(preprocessedImage)
 
 
     print("Prediction is")
 
-    print(prediction)
+    print(asyncio.run(prediction))
 
     exportLATEXCode(prediction)
 

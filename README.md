@@ -23,3 +23,7 @@ outputted onto a screen.
 
 
 ## Function 3. Do arithmetic using the user input (image of math) and solve the arithmetic
+
+## Function 4. Convert predicted LATEX code to Symbolic Python code and export
+
+## Function 5. Convert predicted LATEX code to MATLAB code and export

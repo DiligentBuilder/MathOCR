@@ -16,7 +16,7 @@ notation, and the answer to the scanned mathematical expression will be automati
 outputted onto a screen.
 
 
-## Function 1 (Menu Option 1). Recognize and display the math image
+## Function 1 (Menu Option 1). Perform OCR on the math image and display the predicted math and LATEX code
 This is done using a LATEX Math OCR library. The output of the OCR is displayed, both the raw LATEX code and the final image, which is the output of the LATEX code.  
 
 ## Function 2 (Menu Option 2.). Convert predicted LATEX code into SymPy code

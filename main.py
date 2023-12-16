@@ -127,13 +127,15 @@ if __name__ == '__main__':
 
     # Implemented with infinite loop and break when the user decides to quit
 
+    # Starts out with no prediction
+    prediction = ""
+
     while True:
 
         # Ask the user what they would like to do
         # Ask the user to select an option from the menu
         userOption = menu()
 
-        prediction = ""
 
         if userOption == '1':
             # Get the file path of the math image that the user would like to use as the input image
@@ -189,12 +191,17 @@ if __name__ == '__main__':
 
         # Convert LATEX code prediction to Sympy AND export
         if userOption == '4':
-            prediction_sympy = latex2sympy(str(prediction))
-            print("The Prediction, converted to SymPy code, is:")
-            print(prediction_sympy)
+            # Check if there is a LATEX code prediction
+            if prediction == '':
+                print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first. ")
+            else:
+                # if there is a LATEX code prediction, convert it to SymPy AND export
+                prediction_sympy = latex2sympy(str(prediction))
+                print("The Prediction, converted to SymPy code, is:")
+                print(prediction_sympy)
 
-            # Exporting
-            exportSymPyCode(prediction_sympy)
+                # Exporting
+                exportSymPyCode(prediction_sympy)
 
     # Code for Testing purposes
 

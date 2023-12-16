@@ -172,16 +172,20 @@ if __name__ == '__main__':
 
         # Export the LATEX code option
         if userOption == '6':
-            if 'prediction' == '':
-                print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first.")
+            if prediction == '':
+                print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first. ")
             else:
                 exportLATEXCode(prediction)
 
         # Convert LATEX code prediction to Sympy
         if userOption == '2':
-            prediction_sympy = latex2sympy(str(prediction))
-            print("The Prediction, converted to SymPy code, is:")
-            print(prediction_sympy)
+            if prediction == '':
+                print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first. ")
+            else:
+                # If there is a LATEX code prediction, convert it to SymPy
+                prediction_sympy = latex2sympy(str(prediction))
+                print("The Prediction, converted to SymPy code, is:")
+                print(prediction_sympy)
 
         # Convert LATEX code prediction to Sympy AND export
         if userOption == '4':
@@ -207,10 +211,10 @@ if __name__ == '__main__':
     # exportSymPyCode(x)
 
         # Ask the user if they would like to quit
-        print("Would you like to quit")
-        quit = input("Y/N")
+        print("Would you like to quit?")
+        quit = input("Y/N ")
 
-        if quit:
+        if quit == 'Y' or quit == 'y':
             break
 
 

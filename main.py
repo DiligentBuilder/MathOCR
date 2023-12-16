@@ -68,10 +68,14 @@ def menu():
 
     print("5. Convert predicted LATEX code to MATLAB code and export")
 
-    print("Which menu option would you like to select? (Enter number)")
+    print("Which menu option would you like to select?")
+
+    number = input("Enter a number: ")
 
     # get which menu option the user would like to select
     # get the user's input
+
+    return number
 
 
 # get the path to the input image of the math that the user would like to use
@@ -82,6 +86,10 @@ def getMathInputImage():
     print("This should be a clear image that has clear math on it")
 
     print("For example, this could be an image of arithmetic, mathematical equation, mathematical expression, etc.")
+
+    path = input("File path: ")
+
+    return path
 
 
 # calculate the arithmetic using the SymPy code converted from the LATEX code
@@ -95,11 +103,13 @@ def calculateArithmetic(SymPyCode):
     print("The answer to the arithmetic (according to the LATEX prediction) is")
     print(answer)
 
-    print("Would you like to export the answer of the SymPy numerical evaluation it to a .txt file? (y/n)")
+    print("Would you like to export the answer of the SymPy numerical evaluation it to a .txt file?")
+
+    response = input("Y/N ")
 
     # read in char from the user
 
-    if (response == yes):
+    if response == "Y" or response == "y":
 
         # Write the answer to an output file
         with open("./Output/answer.txt", "w") as file3:

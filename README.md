@@ -16,14 +16,27 @@ notation, and the answer to the scanned mathematical expression will be automati
 outputted onto a screen.
 
 
-## Function 1. Recognize the handwritten math and display it
+## Function 1 (Menu Option 1). Recognize and display the math image
+This is done using a LATEX Math OCR library. The output of the OCR is displayed, both the raw LATEX code and the final image, which is the output of the LATEX code.  
 
-## Function 2. Convert LATEX code into SymPy code
+## Function 2 (Menu Option 2.). Convert predicted LATEX code into SymPy code
+The LATEX code from the previous output of the Math Image OCR is converted into SymPy code (for the purposes of automatically helping the user implement that math in Python), and the output is displayed to the user.
+The conversion from LATEX code into SymPy code has been implemented with another Python library. 
 
 
+## Function 3 (Menu Option 3). Do arithmetic using the user input (image of math) and solve the arithmetic
+The SymPy code that is converted from the LATEX code can be evaluated to get an answer to SymPy numerical computations. Hence, this should theoretically result in the math in the input image being evaluated if it is an exact expression. The answer can be exported to a file. 
 
-## Function 3. Do arithmetic using the user input (image of math) and solve the arithmetic
+## Function 4 (Menu Option 4). Convert predicted LATEX code to Symbolic Python code and export
 
-## Function 4. Convert predicted LATEX code to Symbolic Python code and export
+Converting the predicted LATEX code >> Symbolic Python AND exporting the Symbolic Python as a .py file.
 
-## Function 5. Convert predicted LATEX code to MATLAB code and export
+## Function 5 (Menu Option 5). Convert predicted LATEX code to MATLAB code and export
+
+## Function 6 (Menu Option 6). Export the direct LATEX code that is the output of the Math Image OCR
+
+## Menu
+A menu is provided to the user. The user can select which feature of this project that they would like to use. 
+
+
+## Explanation of Organization of Project Files and Main Files of Interest

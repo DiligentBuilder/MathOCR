@@ -98,6 +98,8 @@ Auto-generated LATEX document outputted by program (compiled using Overleaf)
 
 ## Explanation of Organization of Project Files and Main Files of Interest
 
+main.py -- Main Source Code, all source code put into this file, including main code and functions that are implemented and called, libraries are imported here as well and used to help implement the functionalities needed for this project. 
+
 
 ## Acknowledgements
 Libraries that I used in this project

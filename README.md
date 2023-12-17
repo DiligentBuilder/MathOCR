@@ -104,6 +104,9 @@ Auto-generated LATEX document outputted by program (compiled using Overleaf)
 
 ![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/193e0563-8ad4-475d-8f15-18fe49b16d59)
 
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/95fee413-fdb1-4e15-97c1-9bd71f5fd4d1)
+
+
 
 
 

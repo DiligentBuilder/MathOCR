@@ -21,6 +21,8 @@ outputted onto a screen.
 
 ## Prelimininary Design Verification
 
+I have tested my installation of the LaTeX-OCR of the math images using the example math image that is provided in the GitHub of the OCR library. Below is the proof that the library works well with the example, at least:
+
 
 
 ## Design Implementation

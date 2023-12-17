@@ -23,6 +23,14 @@ outputted onto a screen.
 
 I have tested my installation of the LaTeX-OCR of the math images using the example math image that is provided in the GitHub of the OCR library. Below is the proof that the library works well with the example, at least:
 
+Test image I am using to test the pix2tex library (using existing library for the mathematical OCR functionality):
+![ArithmeticMathOCRLowQuality](https://github.com/DiligentBuilder/MathOCR/assets/71938320/ef9e9895-76c4-4db8-9959-b368a81544bd)
+
+Evidence that the Command Line Tool is working properly:
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/a59adf89-32ba-448e-9316-a8691ab85bcd)
+
+
+
 
 
 ## Design Implementation

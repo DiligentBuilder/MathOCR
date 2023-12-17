@@ -37,6 +37,19 @@ Evidence that the Command Line Tool is working properly for Test Image #2:
 
 ![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/c8abda77-02e7-4994-b9e5-7d9cbc61cc29)
 
+Overleaf output (what the outputted LATEX code looks like when compiled by Overleaf):
+
+LATEX output for Test Image #1
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/cfdcc2a7-08c1-4601-a7b9-02db44b45897)
+
+
+
+LATEX output for Test Image #2
+
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/74786958-7628-490e-9702-56d3a2003efc)
+
+
+
 
 
 

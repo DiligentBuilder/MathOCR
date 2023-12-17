@@ -8,7 +8,7 @@ main.py -> main code for the OCR, calls the different libraries that are used to
 
 ## Design Overview
 
-In this Junior Design Project, the purpose of this design is to preprocess and detect images of handwritten math using a math OCR library, and to get useful information about the math and perform different tasks and functions using the mathematical information from the image the user provides. 
+In this Junior Design Project, the ultimate goal and purpose of this design is to preprocess and detect images of handwritten math using a math OCR library, and to get useful information about the math and perform different tasks and functions using the mathematical information from the image the user provides. 
 
 My project idea is a reader for written mathematical equations that can automatically do calculations
 for simple (and progressively more complex, depending on how much time I have) mathematical

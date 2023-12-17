@@ -118,6 +118,8 @@ Auto-generated LATEX document outputted by program (compiled using Overleaf)
 
 ## Summary, Conclusions, and Future Work
 
+Throughout this process, I have accomplished many things. I have learned how these libraries work, and I present the easy-to-use tool that applies different libraries, such as LaTeX-OCR and latex2sympy2, to form a cohesive and easy-to-use tool for the average end user. I have integrated and combined many libraries, functions, and tools on Python to create a cohesive, integrated, whole, and easily accessible and usable software OCR tool. This software Math OCR tool can be used by anyone who works with math equations regularly and would like to automate the process of writing out and implementing math equations in LATEX, MATLAB/Octave, C/C++, SymPy, etc. I hope that this tool can be the start to an effective way to automate the process of scanning both printed and typeset as well as handwritten math and implementing those same equations in popular and useful formats in programming languages that are necessary to implement those equations for a wide variety of fields and needs that use lots of mathematical equations, where it would be beneficial to have an automated process, in addition to the manual processes and verification already out there for implementing mathematical equations in different programming formats. 
+
 
 
 

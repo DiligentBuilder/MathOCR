@@ -67,11 +67,16 @@ Input image #1:
 
 ![ArithmeticMathOCRLowQuality](https://github.com/DiligentBuilder/MathOCR/assets/71938320/0b060520-917b-4f9e-94b2-1632cffeb0a0)
 
-Going through the first menu option:
+Going through the first menu option
 
-Going through the second menu option:
+Going through the second menu option
 
-Going through the third menu option:
+Going through the third menu option
+
+Auto-generated LATEX document outputted by program (compiled using Overleaf)
+
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/193e0563-8ad4-475d-8f15-18fe49b16d59)
+
 
 
 

@@ -63,11 +63,16 @@ A menu is provided to the user. The user can select which feature of this projec
 
 Here are tests on test images to show that the final system works well for detecting and calculating the handwritten math of different input image with simple arithmetic.
 
+Here, I am testing all the functions that the system has implemented so far using several input images. Here are the current results of the testing.
+
+
 Input image #1:
 
 ![ArithmeticMathOCRLowQuality](https://github.com/DiligentBuilder/MathOCR/assets/71938320/0b060520-917b-4f9e-94b2-1632cffeb0a0)
 
 Going through the first menu option
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/f7e1888f-3a43-4aac-acc6-6ef1f3c31a3b)
+
 
 Going through the second menu option
 

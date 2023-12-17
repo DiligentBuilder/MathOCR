@@ -26,11 +26,24 @@ import imageio as iio
 
 
 def preprocessimage(img):
+
     # converting the image to RGB
-    converted_image = img.convert('RGB')
+    converted_img = img.convert('RGB')
+    # print(converted_img.shape)
+
+    # Converting image to array
+    array_img = image.img_to_array(converted_img)
+
+    # print(array_img.shape)
+
 
     # Downsampling the image
-    preprocessedimg = ski.measure.block_reduce(converted_image)
+    preprocessedimg_arr = ski.measure.block_reduce(array_img, block_size=(2, 2, 1))
+
+    # print(preprocessedimg_arr.shape)
+
+    # Converting the array to an image
+    preprocessedimg = image.array_to_img(preprocessedimg_arr)
 
     return preprocessedimg
 
@@ -171,23 +184,30 @@ if __name__ == '__main__':
             # Downsample the image
 
             # Using the Latex OCR library
+
+            # Opening the image that the user desires from the path that the user selected
             img = Image.open(userFilePath)
+
+            # Preprocessing the image
+            preprocessed_img = preprocessimage(img)
+
+            # Instantiating a model object
             model = LatexOCR()
 
             # Display the LATEX code
             print("Prediction is: ")
-            print(model(img))
+            print(model(preprocessed_img))
 
             prediction = model(img)
             # print(asyncio.run(app.predict(img1)))
 
             # Display the output image that is produced by the LATEX code when it is run
 
-        img2 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.png')
+        #img2 = Image.open('C:/Users/aaron/Downloads/ArithmeticMathOCRLowQuality.png')
 
-        preprocessedImage = preprocessimage(image.img_to_array(img2))
+        #preprocessedImage = preprocessimage(image.img_to_array(img2))
 
-        model = LatexOCR()
+        #model = LatexOCR()
         # print(asyncio.run(app.predict(preprocessedImage)))
 
         # prediction = app.predict(preprocessedImage)

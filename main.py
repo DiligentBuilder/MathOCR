@@ -70,7 +70,7 @@ def menu():
 
     print("4. Convert LATEX code prediction to SymPy code and export")
 
-    print("5. Convert LATEX code prediction to MATLAB code and export")
+    print("5. Convert LATEX code prediction to MATLAB code and export (Not possible...yet!)")
 
     print("6. Export the direct LATEX code that is the output of the Math Image OCR")
 
@@ -115,6 +115,7 @@ def calculateArithmetic(SymPyCode):
 
     if response == "Y" or response == "y":
         # Write the answer to an output file
+        print("Ok, exporting to a output .txt file, answer.txt, in the Output directory...")
         with open("./Output/answer.txt", "w") as file3:
             # writing the answer string to a file
             file3.write(str(answer))
@@ -136,8 +137,8 @@ if __name__ == '__main__':
         # Ask the user to select an option from the menu
         userOption = menu()
 
-
         if userOption == '1':
+            print("You selected Option #1!")
             # Get the file path of the math image that the user would like to use as the input image
             userFilePath = getmathinputimage()
 
@@ -174,6 +175,7 @@ if __name__ == '__main__':
 
         # Export the LATEX code option
         if userOption == '6':
+            print("You selected Option #6!")
             if prediction == '':
                 print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first. ")
             else:
@@ -181,6 +183,7 @@ if __name__ == '__main__':
 
         # Convert LATEX code prediction to Sympy
         if userOption == '2':
+            print("You selected Option #2!")
             if prediction == '':
                 print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first. ")
             else:
@@ -189,8 +192,24 @@ if __name__ == '__main__':
                 print("The Prediction, converted to SymPy code, is:")
                 print(prediction_sympy)
 
+                # display the SymPy code as an image preview
+                preview(prediction_sympy, viewer='file', filename='./Output/SymPyCodeOutput.png')
+
+        # Compute numerical calculation
+        if userOption == '3':
+            print("You selected Option #3!")
+            # Check if there is any SymPy code stored in the system
+            if prediction_sympy == '':
+                print("Sorry, no SymPy code stored in the system yet.")
+                print("Please make sure to 1) input the image, 2) run the OCR, and 3) convert to SymPy")
+                print("Before running the numerical calculation. Thank you!")
+
+            else:
+                calculateArithmetic(prediction_sympy)
+
         # Convert LATEX code prediction to Sympy AND export
         if userOption == '4':
+            print("You selected Option #4!")
             # Check if there is a LATEX code prediction
             if prediction == '':
                 print("Sorry, no LATEX code prediction yet. Please input an image and run the OCR first. ")
@@ -200,22 +219,25 @@ if __name__ == '__main__':
                 print("The Prediction, converted to SymPy code, is:")
                 print(prediction_sympy)
 
+                # display the SymPy code as an image preview
+                preview(prediction_sympy, viewer='file', filename='./Output/SymPyCodeOutput.png')
+
                 # Exporting
                 exportSymPyCode(prediction_sympy)
 
-    # Code for Testing purposes
+        # Code for Testing purposes
 
-    # tex = r"\frac{d}{dx}(x^{2}+x)"
-    # # Or you can use '\mathrm{d}' to replace 'd'
-    # x = latex2sympy(tex)
-    # # => "Derivative(x**2 + x, x)"
-    # y = latex2sympy(tex)
-    # # => "2 x + 1"
-    #
-    # print(x)
-    # print(y)
-    #
-    # exportSymPyCode(x)
+        # tex = r"\frac{d}{dx}(x^{2}+x)"
+        # # Or you can use '\mathrm{d}' to replace 'd'
+        # x = latex2sympy(tex)
+        # # => "Derivative(x**2 + x, x)"
+        # y = latex2sympy(tex)
+        # # => "2 x + 1"
+        #
+        # print(x)
+        # print(y)
+        #
+        # exportSymPyCode(x)
 
         # Ask the user if they would like to quit
         print("Would you like to quit?")
@@ -223,6 +245,3 @@ if __name__ == '__main__':
 
         if quit == 'Y' or quit == 'y':
             break
-
-
-

@@ -75,8 +75,30 @@ Going through the first menu option
 
 
 Going through the second menu option
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/c60bc488-55c7-4df2-b14d-6d46e7c700c2)
+
 
 Going through the third menu option
+
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/245c9133-64f3-4626-a26a-53ffba6ab86a)
+
+Going through the fourth menu option
+
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/3b798417-54d3-47d8-ab2a-090b47fa1d24)
+
+Going through the fifth menu option
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/d2f40a32-2b72-405c-8dc8-37a6b11e77d6)
+
+Going through the sixth menu option
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/b4a44c7c-8326-4790-a43e-534011b20286)
+
+Going through the seventh menu option (and quitting)
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/8825ea70-4601-42d7-8558-f091c324b4a9)
+
+
+
+
+
 
 Auto-generated LATEX document outputted by program (compiled using Overleaf)
 

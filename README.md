@@ -4,7 +4,7 @@ ECE 1885 Junior Design Project #3
 
 Does OCR with math and does different functions after the math is recognized
 
-main.py -> main code for the OCR, calls the different libraries that are used to perform the Math OCR tasks.
+main.py -> main code for the OCR, calls the different libraries that are used to perform the Math OCR tasks. To run the Math OCR software program, just simply run main.py using Python and all the required libraries for the Math OCR to work correctly.
 
 ## Design Overview
 

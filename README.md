@@ -169,7 +169,7 @@ Input folder/directory -- The input folder is supposed to be a place to store th
 
 Output folder/directory -- The output folder is a place where the output images get stored, any exported LATEX documents, SymPy code, MATLAB/Octave code, C/C++ code, etc. (could implement more mathematical formats to export in if there were more time to develop this project and if there are opportunities to continue this project) are stored in this directory.
 
-There are also the python environment files and the other files that are a part of the PyCharm project, but are too large to upload onto the GitHub. They will be uploaded in the final project files for the Junior Design Project #3. 
+There are also the Python environment files and the other files that are a part of the PyCharm project, but are too large to upload onto the GitHub. They will be uploaded in the final project files for the Junior Design Project #3. 
 
 
 ## Acknowledgements

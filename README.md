@@ -165,6 +165,12 @@ Throughout this process, I have accomplished many things. I have learned how the
 
 main.py -- Main Source Code, all source code put into this file, including main code and functions that are implemented and called, libraries are imported here as well and used to help implement the functionalities needed for this project. 
 
+Input folder/directory -- The input folder is supposed to be a place to store the input images
+
+Output folder/directory -- The output folder is a place where the output images get stored, any exported LATEX documents, SymPy code, MATLAB/Octave code, C/C++ code, etc. (could implement more mathematical formats to export in if there were more time to develop this project and if there are opportunities to continue this project) is stored in this directory.
+
+There are also the python environment files and the other files that are a part of the PyCharm project, but are too large to upload onto the GitHub. They will be uploaded in the final project files for the Junior Design Project #3. 
+
 
 ## Acknowledgements
 Libraries that I used in this project

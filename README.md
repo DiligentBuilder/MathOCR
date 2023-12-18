@@ -126,9 +126,18 @@ Going through the seventh menu option (and quitting)
 
 Auto-generated LATEX document outputted by program (compiled using Overleaf)
 
-![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/193e0563-8ad4-475d-8f15-18fe49b16d59)
+First page:
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/de3890a7-1516-4ab6-96e9-e17770a5fc86)
 
-![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/95fee413-fdb1-4e15-97c1-9bd71f5fd4d1)
+
+Second page:
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/317648a4-4305-4f79-9655-24661052ff31)
+
+
+
+
+
+
 
 
 

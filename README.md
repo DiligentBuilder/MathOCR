@@ -129,9 +129,9 @@ Auto-generated LATEX document outputted by program (compiled using Overleaf)
 First page:
 ![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/de3890a7-1516-4ab6-96e9-e17770a5fc86)
 
-
 Second page:
-![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/317648a4-4305-4f79-9655-24661052ff31)
+![image](https://github.com/DiligentBuilder/MathOCR/assets/71938320/0228dbc0-bbf1-4d91-8022-b59c5b41e915)
+
 
 
 

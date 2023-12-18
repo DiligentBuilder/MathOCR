@@ -75,9 +75,11 @@ The SymPy code that is converted from the LATEX code can be evaluated to get an 
 
 Converting the predicted LATEX code >> Symbolic Python AND exporting the Symbolic Python as a .py file.
 
-### Function 5 (Menu Option 5). Convert predicted LATEX code to MATLAB code and export
+### Function 5 (Menu Option 5). Convert predicted LATEX code to Octave/MATLAB code and export
 
-### Function 6 (Menu Option 6). Export the direct LATEX code that is the output of the Math Image OCR
+### Function 6 (Menu Option 6). Convert predicted LATEX code to C/C++ code and export
+
+### Function 7 (Menu Option 7). Export the direct LATEX code that is the output of the Math Image OCR
 
 ### Menu
 A menu is provided to the user. The user can select which feature of this project that they would like to use. 
